@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Booking</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation bar -->
+  <nav class="navbar" id="home">
+    <div class="logo">Logo</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+      <li><a href="#about">About Us</a></li>
+    </ul>
+    <div class="user-box">
+      <span class="username">Username</span>
+      <button class="logout-btn" id="logoutBtn" type="button" aria-label="Logout">&#x23FB;</button>
+    </div>
+  </nav>
+
+  <main class="layout">
+    <!-- Left section: added items + booking form -->
+    <section class="left">
+      <div class="panel cart-panel">
+        <h2 class="panel-title">Added Items</h2>
+
+        <div class="table-head">
+          <span>S.No</span>
+          <span>Service Name</span>
+          <span class="right">Price</span>
+        </div>
+
+        <div id="cartBody" class="cart-body"></div>
+
+        <div class="total-row">
+          <span>Total Amount</span>
+          <span id="totalAmount">&#8377; 0</span>
+        </div>
+      </div>
+
+      <div class="panel booking-panel">
+        <h2 class="form-title">Book Now</h2>
+        <form id="bookingForm" novalidate>
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" placeholder="John Doe" autocomplete="off">
+
+          <div class="row">
+            <div>
+              <label for="email">Email ID</label>
+              <input type="email" id="email" placeholder="mail@gmail.com" autocomplete="off">
+            </div>
+            <div>
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" placeholder="0000000000" autocomplete="off">
+            </div>
+          </div>
+
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter password (min 6 characters)" autocomplete="new-password">
+
+          <p id="formMessage" class="form-message" role="alert"></p>
+          <button type="submit" id="bookBtn" class="book-btn" disabled>Book now</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Right section: browse services -->
+    <section class="right-section" id="services">
+      <div class="panel browse-panel">
+        <h2 class="browse-title">Browse Our Services</h2>
+        <p class="browse-desc">Click on the add to cart button to add the services to your cart or press skip</p>
+        <hr>
+
+        <div id="serviceDisplay" class="service-display"></div>
+
+        <hr>
+        <p class="info-line"><span class="info-icon">i</span> Add the items to the cart and book now</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div id="about">
+      <h3>About Us</h3>
+      <p>We bring trusted home and laundry services to your doorstep. Pick a service, add it to the cart and book it in a minute.</p>
+    </div>
+    <div id="contact">
+      <h3>Contact Us</h3>
+      <p>support@servicebooking.example<br>+00 000 000 0000</p>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
